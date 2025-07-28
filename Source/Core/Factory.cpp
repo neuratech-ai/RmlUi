@@ -454,6 +454,12 @@ ElementPtr Factory::InstanceDocumentStream(Context* context, Stream* stream, con
 {
 	RMLUI_ZoneScoped;
 
+	if (!context)
+	{
+		Log::Message(Log::LT_ERROR, "Failed to instance document stream. Context is null.");
+		return nullptr;
+	}
+
 	ElementPtr element = Factory::InstanceElement(nullptr, document_base_tag, document_base_tag, XMLAttributes());
 	if (!element)
 	{

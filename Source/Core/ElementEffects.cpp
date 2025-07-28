@@ -56,6 +56,18 @@ void ElementEffects::InstanceEffects()
 	RMLUI_ZoneScopedC(0xB22222);
 	ReleaseEffects();
 
+	if (!element->GetOwnerDocument())
+	{
+		RMLUI_ERRORMSG("ElementEffects::InstanceEffects called on element without an owner document");
+		return;
+	}
+
+	if (!element->GetOwnerDocument()->GetContext())
+	{
+		RMLUI_ERRORMSG("ElementEffects::InstanceEffects called on element without a valid context");
+		return;
+	}
+
 	RenderManager* render_manager = element->GetRenderManager();
 	if (!render_manager)
 	{

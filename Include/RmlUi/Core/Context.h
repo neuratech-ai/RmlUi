@@ -324,8 +324,11 @@ private:
 	// Documents that have been unloaded from the context but not yet released.
 	OwnedElementList unloaded_documents;
 
+public:
 	// Root of the element tree.
 	ElementPtr root;
+
+private:
 	// The element that currently has input focus.
 	Element* focus;
 	// The top-most element being hovered over.

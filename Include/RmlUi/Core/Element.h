@@ -750,7 +750,10 @@ private:
 	bool dirty_transform : 1;
 	bool dirty_perspective : 1;
 
+public:
 	OwnedElementList children;
+
+private:
 	int num_non_dom_children;
 
 	// Defines which box area to use for clipping; this is usually padding, but may be content.
@@ -763,22 +766,22 @@ private:
 	String id;
 
 	// Instancer that created us, used for destruction.
-	ElementInstancer* instancer;
+	ElementInstancer* instancer = nullptr;
 
 	// Parent element.
-	Element* parent;
+	Element* parent = nullptr;
 	// Currently focused child object
-	Element* focus;
+	Element* focus = nullptr;
 	// The owning document
-	ElementDocument* owner_document;
+	ElementDocument* owner_document = nullptr;
 
 	// Active data model for this element.
-	DataModel* data_model;
+	DataModel* data_model = nullptr;
 	// Attributes on this element.
 	ElementAttributes attributes;
 
 	// The offset of the element, and the element it is offset from.
-	Element* offset_parent;
+	Element* offset_parent = nullptr;
 	Vector2f relative_offset_base;     // the base offset from the parent
 	Vector2f relative_offset_position; // the offset of a relatively positioned element
 
