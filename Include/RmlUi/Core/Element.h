@@ -679,6 +679,7 @@ protected:
 
 	void OnStyleSheetChangeRecursive();
 
+public:
 	void Release() override;
 
 private:

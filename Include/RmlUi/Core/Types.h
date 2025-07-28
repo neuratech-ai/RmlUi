@@ -113,7 +113,7 @@ using FontFaceHandle = uintptr_t;
 using FontEffectsHandle = uintptr_t;
 using LayerHandle = uintptr_t;
 
-using ElementPtr = UniqueReleaserPtr<Element>;
+using ElementPtr = SharedPtr<Element>;
 using ContextPtr = UniqueReleaserPtr<Context>;
 using EventPtr = UniqueReleaserPtr<Event>;
 
